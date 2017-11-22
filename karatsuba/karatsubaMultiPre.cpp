@@ -16,7 +16,7 @@ int countDigit(int val) {
 
 // Recursive function to compute the naive Karatsuba Multiplication routine
 int doMulti(int val1, int val2) {
-    if (countDigit(val1) == 1 || countDigit(val2) == 1) {
+    if (val1 < 10 || val2 < 10) {
         return val1 * val2;
     }
     int a,b,c,d, ac, ad, bc, bd, result, digitC;
@@ -25,7 +25,7 @@ int doMulti(int val1, int val2) {
   
     a = val1 / pow( 10, divider);
     b = val1 % (int)pow( 10, divider);
-    
+ 
     c = val2 / pow( 10, divider);
     d = val2 % (int)pow( 10, divider);
     
